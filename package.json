@@ -1,7 +1,7 @@
 {
   "name": "snozbot.fungus",
   "displayName": "Fungus",
-  "version": "3.11.5",
+  "version": "3.13.4",
   "unity": "2018.3",
   "description": "An easy to use Unity 3D library for creating illustrated Interactive Fiction games.",
   "keywords": [
@@ -14,15 +14,5 @@
     "name": "Chris Gregan"
   },
   "samples": [
-    {
-      "displayName": "FungusExamples",
-      "description": "A serie of complete examples using Fungus.",
-      "path": "Samples~/FungusExamples"
-    },
-    {
-      "displayName": "PlayMaker",
-      "description": "PlayMaker scripts.",
-      "path": "Samples~/PlayMaker"
-    }
   ]
 }
