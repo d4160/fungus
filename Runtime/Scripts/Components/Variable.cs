@@ -1,4 +1,4 @@
-// This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.com/gofungus).
+// This code is part of the Fungus library (https://github.com/snozbot/fungus)
 // It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
 
 using UnityEngine;
@@ -122,6 +122,12 @@ namespace Fungus
         /// </summary>
         public abstract void OnReset();
 
+        /// <summary>
+        /// Boxed or referenced value of type defined within inherited types.
+        /// Not recommended for direct use, primarily intended for use in editor code.
+        /// </summary>
+        public abstract object GetValue();
+
         #endregion
     }
 
@@ -176,6 +182,11 @@ namespace Fungus
                     globalStaicRef.Value = value;
                 }
             }
+        }
+
+        public override object GetValue()
+        {
+            return value;
         }
 
         protected T startValue;
