@@ -2,16 +2,19 @@
 // It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
 
 using UnityEngine;
-
+using UnityEditor.Experimental.AssetImporters;
 using System.IO;
+#if UNITY_2020_2_OR_NEWER
+using UnityEditor.AssetImporters;
+#endif
 
 namespace Fungus.EditorUtils
 {
 #if UNITY_2018_4_OR_NEWER
-    [UnityEditor.AssetImporters.ScriptedImporter(1, "lua")]
-	public class LuaScriptedImporter : UnityEditor.AssetImporters.ScriptedImporter
+    [ScriptedImporter(1, "lua")]
+	public class LuaScriptedImporter : ScriptedImporter
 	{
-	    public override void OnImportAsset(UnityEditor.AssetImporters.AssetImportContext ctx)
+	    public override void OnImportAsset(AssetImportContext ctx)
 	    {
 	        TextAsset lua = new TextAsset(File.ReadAllText(ctx.assetPath));
 	        ctx.AddObjectToAsset("main", lua);
